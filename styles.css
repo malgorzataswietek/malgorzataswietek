@@ -64,7 +64,7 @@ body {
 
 /* ABOUT */
 .about {
-  padding: 50px 20px; /* odstępy między sekcjami */
+  padding: 50px 20px;
   max-width: 1100px;
   margin: auto;
 }
@@ -76,13 +76,9 @@ body {
 }
 
 .about-image img {
-  max-width: 250px; /* ograniczenie wielkości zdjęcia */
+  max-width: 250px; /* zdjęcie po lewej, mniejsze */
   width: 100%;
   border-radius: 16px;
-}
-
-.about-text {
-  max-width: 700px;
 }
 
 .about-text h2 {
@@ -94,6 +90,19 @@ body {
   font-size: 18px;
   line-height: 1.6;
   color: var(--text);
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    margin-top: 0;
+  }
 }
 
 
