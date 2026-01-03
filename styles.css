@@ -22,23 +22,61 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 40px;   /* odstęp od góry */
-  padding-bottom: 40px;/* opcjonalnie trochę od dołu */
-  min-height: auto;     /* nie narzucamy wysokości */
-  background: url('assets/img/logo-tlo.png') center/contain no-repeat;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative; /* dla pseudo-elementu */
+  overflow: hidden;
+  background-color: #fffae9; /* opcjonalnie tło, jeśli logo jest przezroczyste */
 }
 
-/* Zwiększone napisy */
+/* Półprzezroczyste logo w tle */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;           /* szerokość logo, możesz dopasować */
+  height: auto;
+  background-image: url('assets/img/logo-tlo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;          /* przezroczystość logo */
+  z-index: 0;
+}
+
+.hero h1,
+.hero h2 {
+  position: relative;   /* napisy nad logiem */
+  z-index: 1;
+}
+
 .hero h1 {
-  font-size: 100px;    /* naprawdę duży napis */
+  font-size: 100px;
   color: #B91a1a;
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
 }
 
 .hero h2 {
-  font-size: 56px;     /* większy podtytuł */
+  font-size: 56px;
   color: #5e5226;
-  margin: 0;
+}
+
+/* RESPONSYWNOŚĆ HERO */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 80px; }
+  .hero h2 { font-size: 48px; }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 60px; }
+  .hero h2 { font-size: 36px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 36px; }
+  .hero h2 { font-size: 24px; }
+  .hero::before { width: 70%; } /* logo większe na małym ekranie, subtelne */
 }
 
 /* RESPONSYWNOŚĆ */
