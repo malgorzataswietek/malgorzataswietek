@@ -62,35 +62,102 @@ body {
   text-align: center;
 }
 
-/* ABOUT */
+<!-- ABOUT SECTION -->
+<section class="about">
+  <div class="about-content">
+    <!-- ZDJĘCIE PO LEWEJ -->
+    <div class="about-image">
+      <img src="assets/img/moje-zdjecie.jpg" alt="Małgorzata Świętek">
+    </div>
+
+    <!-- TEKST PO PRAWEJ -->
+    <div class="about-text">
+      <h2>KIM JESTEM?</h2>
+      <p>
+        Jestem studentką dietetyki i trenerem personalnym.<br><br>
+        Mam podejście, które opiera się na budowaniu zdrowych nawyków
+        bez presji i skrajności.<br><br>
+        Jeśli jesteś zainteresowana/y – pomogę Ci zmienić także Twoje nawyki.
+        W prosty, logiczny i dopasowany do Twojego stylu życia sposób.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
 .about {
   padding: 50px 20px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
 }
 
 .about-content {
   display: flex;
-  align-items: center;
-  gap: 40px; /* odstęp między zdjęciem a tekstem */
+  flex-direction: row; /* linia zdjęcie + tekst */
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* ZDJĘCIE PO LEWEJ - duże */
+.about-image {
+  flex: 1; /* zajmuje 50% szerokości */
 }
 
 .about-image img {
-  max-width: 250px; /* zdjęcie po lewej, mniejsze */
-  width: 100%;
+  width: 100%; /* wypełnia kontener */
+  height: auto;
   border-radius: 16px;
 }
 
+.about-text {
+  flex: 1; /* druga połowa dla tekstu */
+}
+
 .about-text h2 {
-  color: var(--primary);
+  color: #B91a1a;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .about-text p {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--text);
+  color: #5e5226;
+  text-align: left;
 }
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 1024px) {
+  .about-content {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* zdjęcie nad tekstem */
+    gap: 20px;
+    align-items: center;
+  }
+
+  .about-image {
+    width: 90%; /* zdjęcie mniejsze na mobile */
+  }
+
+  .about-text {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+</style>
+
 
 /* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
