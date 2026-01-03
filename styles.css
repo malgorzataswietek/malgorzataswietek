@@ -230,7 +230,24 @@ hr.section-divider {
   .about-content { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
   .about-text { max-width: 100%; }
   .about-image img { max-width: 90%; }
-  .transformacja-item { width: 45%; margin: 10px auto; }
+  @media (max-width: 768px) {
+  .about-content { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
+  
+  .about-image img { max-width: 90%; }
+
+  .transformacje-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* pozwala obrazkom zawijać się do kolejnego wiersza */
+    gap: 10px;       /* odstęp między obrazkami */
+  }
+
+  .transformacja-item {
+    flex: 0 0 45%;  /* każdy obrazek zajmuje 45% szerokości kontenera */
+    margin: 0;      /* usuń auto, żeby były obok siebie */
+  }
+}
+
 }
 
 @media (max-width: 480px) {
