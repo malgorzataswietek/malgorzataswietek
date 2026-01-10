@@ -256,3 +256,33 @@ hr.section-divider {
   .hero h2 { font-size: 24px; }
   .about-text p { font-size: 18px; }
 }
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .offer {
+    display: grid;
+    grid-template-columns: 1fr; /* jedna kolumna na telefonie */
+    gap: 10px;
+    padding: 15px;
+    align-items: start; /* lepsze dopasowanie opisu */
+  }
+
+  .price {
+    text-align: left;
+  }
+
+  .offers {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .offers h2 { font-size: 28px; }
+  .name { font-size: 16px; }
+  .desc { font-size: 14px; }
+  .who { font-size: 12px; }
+  .price { font-size: 16px; }
+}
+
