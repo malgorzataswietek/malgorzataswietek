@@ -244,7 +244,7 @@ hr.section-divider {
 /* ===== STOPKA ===== */
 .site-footer {
   text-align: center;       /* wyśrodkowanie tekstu */
-  display: flex;
+  display: center;
   font-size: 10px;          /* drobna, elegancka czcionka */
   color: #555;              /* ciemnoszary, nie czarny – łagodniejszy dla oka */
   padding: 20px 40px;          /* przestrzeń nad i pod stopką */
