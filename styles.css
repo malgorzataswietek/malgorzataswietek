@@ -241,6 +241,17 @@ hr.section-divider {
 
 .kontakt a.button:hover { background-color: var(--fg-primary); }
 
+/* ===== STOPKA ===== */
+.site-footer {
+  text-align: center;       /* wyśrodkowanie tekstu */
+  font-size: 14px;          /* drobna, elegancka czcionka */
+  color: #555;              /* ciemnoszary, nie czarny – łagodniejszy dla oka */
+  padding: 20px 0;          /* przestrzeń nad i pod stopką */
+  border-top: 1px solid #eee; /* delikatna linia oddzielająca od reszty strony */
+  background-color: #fff;    /* albo #f9f9f9 dla lekkiego kontrastu */
+  font-family: 'Inter', sans-serif; /* albo Twoja główna czcionka */
+}
+
 /* ===== RESPONSYWNOŚĆ ===== */
 @media (max-width: 1024px) {
   .about-content { gap: 30px; }
