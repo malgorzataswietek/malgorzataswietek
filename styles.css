@@ -231,7 +231,7 @@ hr.section-divider {
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   padding: 30px 40px;
 }
-.faq h2 { color: var(--accent); font-size: 36px; margin-bottom: 30px; text-align: left; }
+.faq h2 { color: var(--accent); font-size: 36px; margin-bottom: 30px; text-align: center; }
 .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; }
 .faq-question {
   width: 100%;
@@ -322,34 +322,6 @@ hr.section-divider {
     text-align: left;
     margin-top: 5px;
   }
-}
-
-/* ===== GALERIA – MOBILE ===== */
-@media (max-width: 600px) {
-  .story-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 obok siebie */
-    gap: 10px;
-    max-width: 100%;
-  }
-
-  .story-images img {
-    width: 100%;
-    height: auto;      /* pełny obrazek bez przycinania */
-    object-fit: cover;
-    border-radius: 15px;
-  }
-}
-
-/* ===== UNIKANIE HORIZONTAL SCROLL ===== */
-body, html {
-  overflow-x: hidden; /* blokuje przewijanie w poziomie */
-}
-
-/* ===== MENU ===== */
-.mobile-menu {
-  max-width: 100%;
-  box-sizing: border-box; /* menu nie wychodzi poza ekran */
 }
 
 
@@ -602,4 +574,121 @@ body.dark .theme-toggle {
   color: #eecc94;       /* kolor kropki w ciemnym trybie */
 }
 
+/* ===== KIM JESTEM - MOBILE ===== */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* zdjęcie nad tekstem */
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
 
+  .about-image {
+    max-width: 90%; /* zdjęcie zmniejszone, proporcje zachowane */
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text h2,
+  .about-text p {
+    text-align: center; /* tekst pod zdjęciem wycentrowany */
+  }
+}
+
+/* MOJA HISTORIA - GALERIA */
+.story-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* ===== MOJA HISTORIA - WYŚRODKOWANY TEKST ===== */
+.my-story {
+  text-align: center;
+}
+
+.my-story h2,
+.my-story .story-box p {
+  text-align: center;
+}
+
+
+/* ===== RESPONSYWNOŚĆ ===== */
+@media (max-width: 768px) {
+  .story-images {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolumny na tablet/telefon */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-story h2 {
+    font-size: 28px;
+  }
+  .story-box p {
+    font-size: 16px;
+  }
+}
+
+
+
+/* OFERTY - RESPONSYWNOŚĆ MOBILE */
+@media (max-width: 768px) {
+  .offer {
+    display: flex;
+    flex-direction: column; /* wszystko pod sobą */
+    gap: 8px;               /* odstęp między elementami */
+    padding: 15px 10px;     
+    border-bottom: 1px solid var(--accent); /* linia między ofertami */
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .offer .name,
+  .offer .price,
+  .offer .desc,
+  .offer .who {
+    margin: 0;              /* usuń marginesy domyślne */
+  }
+
+  .offer .name {
+    font-weight: bold;
+    color: var(--accent);  /* nagłówek czerwony */
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .offer .desc,
+  .offer .who {
+    font-weight: normal;
+  }
+
+  .offer .price {
+    font-weight: bold;
+    color: var(--accent);   /* cena czerwone */
+    text-align: left;
+    font-size: 18px;
+  }
+}
+
+
+
+/* Mobile fix – cała strona */
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden; /* blokuje uciekanie w prawo */
+  }
+
+  .hero, .about, .my-story, .steps, .offers, .faq-container, .kontakt {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu {
+    width: 80%; /* menu dopasowane do ekranu telefonu */
+  }
+}
