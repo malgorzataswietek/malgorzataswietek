@@ -304,15 +304,54 @@ hr.section-divider {
   background-color: var(--bg-primary);
 }
 
-/* ===== RESPONSYWNOŚĆ ===== */
-@media (max-width: 900px) { .about-content { gap: 30px; } }
-@media (max-width: 768px) { .about-content { flex-direction: column; gap: 20px; align-items: center; text-align: center; } .about-text { max-width: 100%; } .about-image img { max-width: 90%; } }
-@media (max-width: 480px) { .hero h1 { font-size: 36px; } .hero h2 { font-size: 24px; } .about-text p { font-size: 18px; } }
+/* ===== OFERTY – MOBILE ===== */
+@media (max-width: 768px) {
+  .offers {
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
-/* ===== GALERIA RESPONSYWNA ===== */
-@media (max-width: 900px) { .story-images { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 600px) { .story-images { grid-template-columns: repeat(2,1fr); gap:10px; } .story-images img { max-height: 200px; } }
-@media (max-width: 400px) { .story-images { grid-template-columns: 1fr; } .story-images img { max-height: 180px; } }
+  .offer {
+    display: block; /* wszystkie oferty pod sobą */
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--accent); /* linia czerwona */
+  }
+
+  .price {
+    text-align: left;
+    margin-top: 5px;
+  }
+}
+
+/* ===== GALERIA – MOBILE ===== */
+@media (max-width: 600px) {
+  .story-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 obok siebie */
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .story-images img {
+    width: 100%;
+    height: auto;      /* pełny obrazek bez przycinania */
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+
+/* ===== UNIKANIE HORIZONTAL SCROLL ===== */
+body, html {
+  overflow-x: hidden; /* blokuje przewijanie w poziomie */
+}
+
+/* ===== MENU ===== */
+.mobile-menu {
+  max-width: 100%;
+  box-sizing: border-box; /* menu nie wychodzi poza ekran */
+}
+
 
 /* ===== MENU ROZWIJANE – KAFELKI + KRZYŻYK ===== */
 .menu-toggle {
