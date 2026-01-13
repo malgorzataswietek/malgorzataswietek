@@ -982,5 +982,9 @@ body.dark .story-images img {
   }
 }
 
+html {
+  scroll-behavior: smooth; /* płynne przewijanie */
+  scroll-padding-top: 80px; /* wysokość headera / hamburgera */
+}
 
 
