@@ -13,3 +13,13 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
+window.addEventListener('load', () => {
+  // resetuje scroll, nawet jeśli jest hash w URL
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 1);
+});
+document.getElementById('start-btn').addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+});

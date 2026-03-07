@@ -71,7 +71,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 /* Sekcja – centrowanie boxa */
 #zdrowe-nawyki {
-  display: flex;
+
   justify-content: center;   /* poziome wyśrodkowanie boxa */
   padding: 40px 20px;        /* odstęp od innych sekcji */
   background-color: transparent; /* brak paska tła */
